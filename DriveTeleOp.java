@@ -9,6 +9,8 @@ public class DriveTeleOp extends LinearOpMode {
 
     // Declare Motors
     private DcMotor FLW, FRW, BLW, BRW;
+    private Intake intake;
+    //declares the intake object...!
 
     @Override
     public void runOpMode() throws InterruptedException {
@@ -33,6 +35,9 @@ public class DriveTeleOp extends LinearOpMode {
         FLW.setDirection(DcMotor.Direction.FORWARD);
         BLW.setDirection(DcMotor.Direction.FORWARD);
 
+        intake = new Intake(hardwareMap);
+        //creates intake object, linking to the motor in the configuration...!
+
         this.telemetry.addData("Status", "Initialized");
         this.telemetry.update();
 
@@ -48,6 +53,18 @@ public class DriveTeleOp extends LinearOpMode {
             FRW.setPower(rightPower);
             BRW.setPower(rightPower);
 
+
+//intake control
+            if (gamepad1.right_trigger > 0.1) {
+                intake.in(); //right trigger causes the intake motor spin in(forwards)
+                
+            } else if (gamepad1.left_trigger > 0.1){
+                intake.out(); //left trigger causes the intake motor to spin out(backwards)
+           
+            } else {
+                intake.stop(); //none of the triggers are pressed then nothing happens(stops)...!
+            }
+                
             if (gamepad1.a){
                 telemetry.addData("Gamepad1", "A pressed");
                 // do a bunch of stuff
@@ -69,4 +86,5 @@ public class DriveTeleOp extends LinearOpMode {
     }
 
 }
+
 
