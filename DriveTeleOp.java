@@ -30,9 +30,9 @@ public class DriveTeleOp extends LinearOpMode {
         BRW.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
         BLW.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
-        FRW.setDirection(DcMotor.Direction.REVERSE);
+        FRW.setDirection(DcMotor.Direction.FORWARD);
         BRW.setDirection(DcMotor.Direction.REVERSE);
-        FLW.setDirection(DcMotor.Direction.FORWARD);
+        FLW.setDirection(DcMotor.Direction.REVERSE);
         BLW.setDirection(DcMotor.Direction.FORWARD);
 
         intake = new Intake(hardwareMap);
@@ -86,5 +86,6 @@ public class DriveTeleOp extends LinearOpMode {
     }
 
 }
+
 
 
