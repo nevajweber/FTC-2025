@@ -7,7 +7,7 @@ public class IntakeTeleOp {
     //declares a variable to represent intake motor
     public IntakeTeleOp(HardwareMap hardwareMap) {
         //constructor (named the same as my class)
-        intakeMotor = hardwaremap.get(DcMotor.class, "intake");
+        intakeMotor = hardwareMap.get(DcMotor.class, "intake");
         //connects the code to the motor in Control Hub
         intakeMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
         //makes the motor stop instead of roaming around
