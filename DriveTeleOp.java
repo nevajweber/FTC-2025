@@ -55,10 +55,10 @@ public class DriveTeleOp extends LinearOpMode {
 
 
 //intake control
-            if (gamepad1.right_trigger > 0.1) {
+            if (gamepad2.right_trigger > 0.1) {
                 intake.in(); //right trigger causes the intake motor spin in(forwards)
                 
-            } else if (gamepad1.left_trigger > 0.1){
+            } else if (gamepad2.left_trigger > 0.1){
                 intake.out(); //left trigger causes the intake motor to spin out(backwards)
            
             } else {
@@ -86,6 +86,7 @@ public class DriveTeleOp extends LinearOpMode {
     }
 
 }
+
 
 
 
