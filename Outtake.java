@@ -21,11 +21,11 @@ public class ServoTestOpMode extends LinearOpMode {
 
         while (opModeIsActive()) {
             // Control servo position with gamepad buttons
-            if (gamepad1.a) {
+            if (gamepad2.a) {
                 myServo.setPosition(0.0); // Move to position 0
-            } else if (gamepad1.b) {
+            } else if (gamepad2.b) {
                 myServo.setPosition(0.5); // Move to position 0.5
-            } else if (gamepad1.x) {
+            } else if (gamepad2.x) {
                 myServo.setPosition(1.0); // Move to position 1
             }
 
