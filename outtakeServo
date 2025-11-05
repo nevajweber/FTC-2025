@@ -1,0 +1,34 @@
+package org.firstinspires.ftc.teamcode;
+import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
+import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
+import com.qualcomm.robotcore.hardware.Servo;
+
+@TeleOp(name = "Outtake Servo Test", group = "TeleOp")
+public class OuttakeServo extends LinearOpMode{
+
+    private Servo outtakeServo;
+
+    public void runOpMode() throws InterruptedException {
+        outtakeServo = hardwareMap.get(Servo.class, "outtakeServo");
+
+        telemetry.addLine("Ready to start");
+        telemetry.update();
+
+        waitForStart();
+
+        while (opModeIsActive()) {
+
+            //Press A to extend, B to retract
+            if (gamepad1.a) {
+                outtakeServo.setPosition(1.0);
+            } else if (gamepad1.b) {
+                outtakeServo.setPosition(0.0);
+            }
+            telemetry.addData("servo Position", outtakeServo.getPosition());
+            telemetry.update();
+        }
+    }
+
+
+
+}
