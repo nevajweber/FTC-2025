@@ -9,7 +9,7 @@ public class DriveTeleOp extends LinearOpMode {
 
     // Declare Motors
     private DcMotor FLW, FRW, BLW, BRW;
-    private Intake intake;
+    private IntakeTeleOp intake;
     //declares the intake object...!
 
     @Override
@@ -35,7 +35,7 @@ public class DriveTeleOp extends LinearOpMode {
         FLW.setDirection(DcMotor.Direction.REVERSE);
         BLW.setDirection(DcMotor.Direction.FORWARD);
 
-        intake = new Intake(hardwareMap);
+        intake = new IntakeTeleOp(hardwareMap);
         //creates intake object, linking to the motor in the configuration...!
 
         this.telemetry.addData("Status", "Initialized");
@@ -86,6 +86,11 @@ public class DriveTeleOp extends LinearOpMode {
     }
 
 }
+
+
+
+
+
 
 
 
