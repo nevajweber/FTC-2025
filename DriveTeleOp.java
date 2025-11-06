@@ -10,7 +10,7 @@ public class DriveTeleOp extends LinearOpMode {
     // Declare Motors
     private DcMotor FLW, FRW, BLW, BRW;
     private IntakeTeleOp intake;
-    //declares the intake object...!
+    //declares the intake object!
 
     @Override
     public void runOpMode() throws InterruptedException {
@@ -36,7 +36,7 @@ public class DriveTeleOp extends LinearOpMode {
         BLW.setDirection(DcMotor.Direction.FORWARD);
 
         intake = new IntakeTeleOp(hardwareMap);
-        //creates intake object, linking to the motor in the configuration...!
+        //creates intake object, linking to the motor in the configuration!
 
         this.telemetry.addData("Status", "Initialized");
         this.telemetry.update();
@@ -62,7 +62,7 @@ public class DriveTeleOp extends LinearOpMode {
                 intake.out(); //left trigger causes the intake motor to spin out(backwards)
            
             } else {
-                intake.stop(); //none of the triggers are pressed then nothing happens(stops)...!
+                intake.stop(); //none of the triggers are pressed then nothing happens(stops)!
             }
                 
             if (gamepad1.a){
@@ -86,6 +86,7 @@ public class DriveTeleOp extends LinearOpMode {
     }
 
 }
+
 
 
 
