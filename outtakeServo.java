@@ -5,7 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.Servo;
 
 @TeleOp(name="Servo Test OpMode", group="FTC")
-public class ServoTestOpMode extends LinearOpMode {
+public class DriveTeleOp extends LinearOpMode {
 
     private Servo myServo;
 
